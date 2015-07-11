@@ -1,21 +1,40 @@
+<!DOCTYPE html>
 <html>
 <head>
 <title>
 </title>
 <script>
 function ordinaryRate(){
-alert("from ordinaryRate()");
+currentMoney = document.getElementById("currentMoney").value;
+years = document.getElementById("years").value;
+rate = document.getElementById("rate").value;
+try {
+p = parseInt(currentMoney);
+//alert(p);
+n = parseInt(years);
+//alert(n);
+r = parseFloat(rate);
+//r.toFixed(2);
+//alert(r);
+i = p*(1+n*r);
+alert("Pi = "+i.toFixed(2));
+//console.log("Hello log");
+document.write("Savings = "+i.toFixed(2));
+}
+catch(err){
+document.innerHTML = "Error"+err;
+alert("Error"+err);
+}
 }
 </script>
-</js>
 </head>
 <body>
 <form>
-<input name = "currentMoney" placeholder = "currentMoney"></input>
-<input name = "years"></input>
-<input name = "rate"></input>
+<input id = "currentMoney" placeholder = "currentMoney">
+<input id = "years" placeholder = "years">
+<input id = "rate" placeholder = "rate">
 <button onClick="ordinaryRate()">Click</button>
-<form>
+</form>
 
 </body>
 </html>
